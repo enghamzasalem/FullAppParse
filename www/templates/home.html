@@ -1,0 +1,102 @@
+ 
+<ion-content>
+ <ion-refresher
+          pulling-text="Pull to refresh..."
+          on-refresh="Todo.getAll()">
+        </ion-refresher>
+<div style=" ">
+
+ <center>
+<button class="button button-outline button-positive"  ui-sref="createTodo">
+<i class="icon ion-compose">اضف سلعة</i>
+</button> </center>
+<div class="list card"  style=" direction: rtl;width:100% " ng-repeat="item in items | orderBy:objectId "
+                  item="item" >
+ 
+  <div class="item item-avatar">
+    <h2>{{item.Username}}</h2>
+    <p>{{item.Phone}}</p>
+  </div>
+
+  <div class="item item-body">
+  <center>	<h2>{{item.Title}} </h2></center>
+  <br/>
+    <img class="full-image" src=" {{item.PIC}}" >
+ 
+    <p data-ng-bind-html="item.Details">
+      
+    </p>
+    <p>
+      
+      <a href="#" class="subdued">  التعليقات</a>
+	  <div class="card" ng-repeat="item2 in items2 | filter:{CommentId:item.objectId}   " >
+	   <h2> انا {{item2.Username}}   ورقمي{{item2.Phone}}</h2>
+  <div class="item item-text-wrap">
+     {{item2.Title}}   
+  </div>
+</div>
+  
+            <ion-button class="button   button-dark" ng-click="openModal()">
+               بدله <i class="icon ion-flash"></i>
+            </ion-button>
+    </p>
+  </div>
+
+</div>
+
+
+
+      </div>
+	  
+	  
+	  
+	  
+	    <script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">اضف تعليقا</h1>
+    </ion-header-bar>
+    < div>
+  
+
+<div class="list card"  style=" direction: rtl;width:100% " ng-repeat="item in items | orderBy:objectId "
+                  item="item" >
+
+  
+	  <div class="card" style="padding-right:3%" ng-repeat="item2 in items2 | filter:{CommentId:item.objectId}   " >
+  <br/>
+        <label class="item item-input">
+      
+      <input type="text" ng-model="todo.username"  requiredid="inputName" placeholder="الاسم"/>
+    </label>
+    <label class="item item-input">
+      
+      <input type="text" ng-model="todo.Phone"  requiredid="inputUsername" placeholder="رقم الهاتف    "/>
+    </label>
+	  <label class="item item-input">
+      
+      <input type="text"    ng-model="todo.Title" required id="inputUsername2" placeholder="نص التعليق"/>
+    </label>
+ 
+ 
+		 <br/>
+            <ion-button class="button   button-dark" ng-click="create1(item)">
+              بددل<i class="icon ion-flash"></i>
+            </ion-button>
+    </p>
+  </div>
+
+</div>
+
+
+ 
+	  
+	 
+	  
+    </div>
+  </ion-modal-view>
+</script>
+	  
+	  
+	  
+</ion-content>

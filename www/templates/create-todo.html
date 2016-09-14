@@ -1,0 +1,37 @@
+ 		<center><h1> ماذا تريد ان تبدل</h1></center>
+ 
+ <div style=";padding-left:25%;padding-right:25%">
+  <div class="card" style=" direction: rtl;width:100% ">
+     <center>
+	<div class="item item-divider">
+      الدخول 
+    </div>
+	    <label class="item item-input">
+      
+      <input type="text" ng-model="todo.username"  requiredid="inputName" placeholder="الاسم"/>
+    </label>
+    <label class="item item-input">
+     
+      <input type="text" ng-model="todo.Phone" id="inputUsername" placeholder="رقم الهاتف"/>
+    </label>
+     <label class="item item-input">
+     
+      <input type="text" ng-model="todo.Title" id="inputUsername" placeholder="العنوان"/>
+    </label>
+            <li class="item item-input item-stacked-label">
+                <textarea type="text" placeholder="التفاصيل" style="direction:rtl;width:95%" name="Content" rows="5" ng-model="todo.Details" required></textarea>
+ 
+			 <br/>
+<center><img src="" id="imag" width="100px"  alt="ارفع صورة"></center>
+			</li>
+			<label class="ace-file-input ace-file-multiple"><input multiple=""   onchange="previewFile()"id="id-input-file-3" type="file"><span class="ace-file-container" data-title="ارفع صورة"><span class="ace-file-name" data-title="No File ..."><i class=" ace-icon ace-icon fa fa-cloud-upload"></i></span></span><a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a></label>
+            <ion-button class="button button-block button-dark" ng-click="create()">
+                انشر اعلانك<i class="icon ion-flash"></i>
+            </ion-button>
+   
+     </center>
+  </div>
+</div>
+
+
+ 
